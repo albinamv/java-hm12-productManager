@@ -13,4 +13,12 @@ public class Book extends Product {
         this.author = author;
     }
 
+    @Override
+    public boolean matches(String search) {
+        if (super.matches(search)) { // вызов метода matches в версии описанной в Product
+            return true;
+        } else {
+            return getAuthor().toLowerCase().contains(search.toLowerCase());
+        }
+    }
 }
