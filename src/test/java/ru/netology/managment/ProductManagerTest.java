@@ -43,19 +43,9 @@ class ProductManagerTest {
     @Test
     public void shouldReturnNoSearchResults() {
         Product[] expected = {};
-        Product[] actual = manager.searchBy("Производитель");
+        Product[] actual = manager.searchBy("Любой текст");
 
         assertArrayEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldMatch() {
-        assertTrue(manager.matches(third, "Смартфон"));
-    }
-
-    @Test
-    public void shouldNotMatch() {
-        assertFalse(manager.matches(third, "Производитель"));
     }
 
 }
